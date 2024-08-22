@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tin Tức</title>
+    <link rel="shortcut icon" type="image/png" href="../assets/img/favicon.png">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/waypoints.min.js"></script>
+    <script src="../js/jquery.counterup.min.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/jquery-3.2.1.slim.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/all.min.css">
+    <link rel="stylesheet" href="../css/all.css">
+	<link rel="stylesheet" href="../css/style_quoc.css">
+    <link rel="stylesheet" href="../css/lytintuc.css">
+	<link rel="stylesheet" href="../css/style_tu.css">
+</head>
+<style>
+    .col-3{
+        flex: 0 0 32%;
+        max-width: 32%;
+    }
+
+    .grow {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: -4px;
+        margin-right: -4px;
+    }
+
+    .title {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .item {
+        display: flex;
+        padding:12px 0;
+    }
+
+    .item-content {
+        padding-left: 10px;
+    }
+
+    .add-view {
+        padding: 12px 70px;
+    }
+
+    .section p {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 20px;
+            color: rgb(63, 59, 59);
+            text-align: center;
+        }
+</style>
+
+<body>
+    <header class="py-3 fixed-top border-bottom border-dark">
+        <div class="d-flex container align-items-center justify-content-between">
+            <div>
+              <a href="../html/trangchu.html">
+                <img class="header__logo" src="../images/logo.png" height="70px" alt="">
+              </a>
+            </div>
+            <nav class="header__menu">
+                <ul class="nav">
+                    <li class="nav-item m-1" onmouseover="add_li_hover(this)" onmouseout="remove_li_hover(this)"><a class="nav-link text-light" href="../html/trangchu.html">TRANG CHỦ</a></li>
+                    <li class="nav-item m-1" onmouseover="add_li_hover(this)" onmouseout="remove_li_hover(this)"><a class="nav-link text-light" href="../html/gioithieu.html">GIỚI THIỆU</a></li>
+					<li class="nav-item m-1" onmouseover="add_li_hover(this)" onmouseout="remove_li_hover(this)"><a class="nav-link text-light" href="../html/sanpham1.html">SẢN PHẨM</a></li>
+                    <li class="nav-item m-1" onmouseover="add_li_hover(this)" onmouseout="remove_li_hover(this)"><a class="nav-link text-light  nav-item__after" href="../html/tintuc.html">TIN TỨC</a></li>
+                    <li class="nav-item m-1" onmouseover="add_li_hover(this)" onmouseout="remove_li_hover(this)"><a class="nav-link text-light" href="../html/lienhe1.html">LIÊN HỆ</a></li>
+                    <li class="nav-item m-1" onmouseover="add_li_hover(this)" onmouseout="remove_li_hover(this)"><a class="nav-link text-light" href="../html/sitemap.html">SITEMAP</a></li>
+                </ul>
+            </nav>
+            <div class="row row-header head-div">
+                <div class="search p-3 col-md-4 position-relative div-tab">
+                    <img class="icon-search header-icon" src="../images/search-icon.png">
+                    <div class="position-absolute input-search">
+                        <form action="">
+                            <input class="form-control" type="text" placeholder="Nhập từ khóa tìm kiếm">
+                        </form>
+                    </div>
+                </div>
+                <div class="user p-3 col-md-4 position-relative div-tab">
+                  <img class="icon-user header-icon" src="../images/user-icon.png">
+                    <div class="auth-form nav position-absolute">
+                        <ul class="navbar-nav m-auto w-100">
+                            <li class="nav-item"><a class="nav-link text-dark pl-1" href="../html/dangky.html">Đăng ký</a></li>
+                            <li class="nav-item"><a class="nav-link text-dark pl-1" href="../html/dangnhap.html">Đăng nhập</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bag p-3 col-md-4 position-relative div-tab">
+                   <a href="../html/giohang.html"><img class="icon-user header-icon" src="../images/cart.png"></a>
+                    <div class="no_card position-absolute">
+                        <figure class="border border">
+                            <img src="../images/no-cart.png" alt="">
+                            <figcaption class="text-center bg-white p-2">Chưa có sản phẩm</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </header>
+    <!--section-->
+    <div class="container-fluid" style=" margin-top: 135px; margin-bottom: 80px;  display: flex; justify-content: space-evenly; max-width: 1500px; width: 80%;">
+
+        <div class="section">
+            <div class="title">
+                <div class="title-new">
+                    <h4>Tin tức</h4>
+                </div>
+                <div class="title-pro">
+                    <h4>Sản phẩm Nổi bật</h4>
+                </div>
+            </div>
+           <div class="grow">
+               <div class="gallery col-3">
+                   <a href="../html/new1.html">
+                       <img style="width: 100%;" src="../images/blog1.jpg" alt="">
+                       <p>Thác Nước Phong Thủy – Cách Bài Trí Giúp Hút Tài Sinh Lộc</p>
+                       </img>
+                   </a>
+               </div>
+               <div class="gallery col-3">
+                   <a href="../html/new2.html">
+                       <img style="width: 100%;" src="../images/blog4.jpg" alt="">
+                       <p>Tượng Phật Trầm Hương – Khám Phá Kiệt Tác Của Kiệt Tác</p>
+                       </img>
+                   </a>
+               </div>
+               <div class="col-3">
+                    <a href="../html/chitietsanpham.html"> 
+						<div class="item">
+                        <div class="item-img">
+                            <img class="img-item" src="../images/sp3.jpg" alt="">
+                        </div>
+                        <div class="item-content">
+                            <h6 class="name-item">Chân Nến Thủy Tinh Phù Dung Chúc Đài</h6>
+                            <span class="price">275,000đ</span>
+                        </div>
+                    </div> </a>
+                    <a href="../html/chitietsanpham.html"><div class="item">
+                         <div class="item-img">
+                            <img class="img-item" src="../images/sp11.jpg" alt="">
+                        </div>
+                        <div class="item-content">
+                            <h6 class="name-item">Đèn Led Trang Trí Ôn Loãng Chi Quang</h6>
+                            <span class="price">750,000đ</span>
+                        </div>
+						</div></a>
+                    <div class="item">
+                        <div class="item-img">
+                            <img class="img-item" src="../images/sp4.jpg" alt="">
+                        </div>
+                        <div class="item-content">
+                            <h6 class="name-item">Đế Sen Cắm Hương Hà Diệp Hương Sáp</h6>
+                            <span class="price">89,000đ</span>
+                        </div>
+                    </div>
+               </div>
+              <div class="gallery col-3">
+                  <a href="../html/new3.html">
+                      <img style="width: 100%;" src="../images/blog8.jpg" alt="">
+                      <p>Cách Chọn Mua Thác Khói Trầm Hương Đèn Led Đẹp</p>
+                      </img>
+                  </a>
+              </div>
+           </div>
+           <div class="add-view">
+                <a href="../html/sanpham1.html" class="text-dark">>> Xem thêm sản phẩm tại đây <<</a>
+    
+            </div>
+            
+        </div>
+    </div>
+    <div class="hotline">
+  <a href="tel:0976982870"><span class="hotline-text">Hotline:</span> 0976982870</a>
+</div>
+    <footer class="bg-dark py-4">
+    <div class="container">
+        <div class="row pt-3">
+            <div class="col-md-5">
+                <h4 class="text-white">Fanpage</h4>                           
+                  <a href=""><img class="icon-user footer-icon" src="../images/facebook-icon.png"></a>
+                  <a href=""><img class="icon-user footer-icon" src="../images/twitter-icon.png"></a>
+                  <a href=""><img class="icon-user footer-icon" src="../images/insta-icon.png"></i></a>
+                  <a href=""><img class="icon-user footer-icon" src="../images/youtube-icon.png"></i></a>
+            </div>
+            <div class="col-md-7 rounded">
+                <h4 class="text-white">Đăng ký nhận thông tin</h4>
+                <p class="text-white">Hãy cho chúng tôi email của bạn và bạn sẽ được cập nhật hàng ngày với các sự kiện mới nhất, chi tiết!</p>
+                <div class="bg-white d-flex">
+                    <input id="email_footer" class="w-100 border-0 pl-3" type="text" placeholder="Nhập email để đăng ký">
+                    <button id="btn_footer" class="btn col-md-2" style="background-color: turquoise;">Đăng ký</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-4">
+        <div class="row pt-3">
+            <div class="col-md-3">
+                <h4 class="text-white">Về chúng tôi</h4>
+                <ul class="navbar-nav footer__menu">
+                    <li class="nav-item"><a class="nav-link text-secondary" href="#"><img class="footer2-icon" src="../images/location-icon.png"> 12 Nguyễn Văn Bảo, Phương 4, Q.Gò Vấp, Tp. Hồ Chí Minh</a></li>
+                    <li class="nav-item"><a class="nav-link text-secondary" href="#"><img class="footer2-icon" src="../images/phone-icon.png"> 9999999999</a></li>
+                    <li class="nav-item"><a class="nav-link text-secondary" href="#"><img class="footer2-icon" src="../images/mail-icon.png"> dhcn@iuh.edu.vn</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-3">
+                <h4 class="text-white">Tin tức</h4>
+                <ul class="navbar-nav footer__menu">
+                    <li class="nav-item"><a class="nav-link text-secondary" href="">Về chúng tôi</a></li>
+                    <li class="nav-item"><a class="nav-link text-secondary" href="">Giới thiệu chung</a></li>
+                    <li class="nav-item"><a class="nav-link text-secondary" href="">Giới thiệu cửa hàng</a></li>
+                    <li class="nav-item"><a class="nav-link text-secondary" href="">Thời gian làm việc</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-3">
+                <h4 class="text-white">Câu hỏi thường gặp</h4>
+                <ul class="navbar-nav footer__menu">
+                    <li class="nav-item"><a class="nav-link text-secondary" href="">Hỏi đáp</a></li>
+                    <li class="nav-item"><a class="nav-link text-secondary" href="">Liên hệ</a></li>
+                    <li class="nav-item"><a class="nav-link text-secondary" href="">Khuyến mãi</a></li>
+                    <li class="nav-item"><a class="nav-link text-secondary" href="">Sản phẩm hot</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-3">
+                <h4 class="text-white">Chính sách</h4>
+                <ul class="navbar-nav footer__menu">
+                    <li class="nav-item"><a class="nav-link text-secondary" href="">Chính sách bảo hành</a></li>
+                    <li class="nav-item"><a class="nav-link text-secondary" href="">Chính sách vận chuyển</a></li>
+                    <li class="nav-item"><a class="nav-link text-secondary" href="">Chính sách đổi hàng</a></li>
+                    <li class="nav-item"><a class="nav-link text-secondary" href="">Quy định thanh toán</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+  </footer> 
+<script>$(document).ready(function(){
+            $('#btn_footer').click(function(){
+                var email =  $('#email_footer').val();
+                var email_regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (email.length == 0 || !email_regex.test(email)){
+                        alert('Email không được trống và phải đúng định dạng');
+                        return false;
+                    }        
+                    else       
+                        {alert('Cảm ơn bạn đã đăng ký nhận thông tin từ shop!')
+                        $('#email_footer').val('')}
+
+            })
+        })
+	function add_li_hover(x){
+      $(x).addClass("nav-item__after");
+    }
+
+    function remove_li_hover(x){
+        $(x).removeClass("nav-item__after");
+    }
+</script>
+</html>
