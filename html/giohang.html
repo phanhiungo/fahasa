@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="vi" class="h-100">
+
+<head>
+  <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng</title>
+    <!--link rel="shortcut icon" type="image/png" href="./assets/img/favicon.png"-->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/jquery-3.2.1.slim.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/all.min.css">
+    <link rel="stylesheet" href="../css/all.css">
+    <link rel="stylesheet" href="../css/style_tu.css">
+	<link rel="stylesheet" href="../css/style_quoc.css">
+    
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/waypoints.min.js"></script>
+    <script src="../js/jquery.counterup.min.js"></script>
+</head>
+<body>
+   <header class="py-3 fixed-top border-bottom border-dark">
+        <div class="d-flex container align-items-center justify-content-between">
+            <div>
+              <a href="../html/trangchu.html">
+                <img class="header__logo" src="../images/logo.png" height="70px" alt="">
+              </a>
+            </div>
+            <nav class="header__menu">
+                <ul class="nav">
+                    <li class="nav-item m-1" onmouseover="add_li_hover(this)" onmouseout="remove_li_hover(this)"><a class="nav-link text-light " href="../html/trangchu.html">TRANG CHỦ</a></li>
+                    <li class="nav-item m-1" onmouseover="add_li_hover(this)" onmouseout="remove_li_hover(this)"><a class="nav-link text-light" href="../html/gioithieu.html">GIỚI THIỆU</a></li>
+					<li class="nav-item m-1" onmouseover="add_li_hover(this)" onmouseout="remove_li_hover(this)"><a class="nav-link text-light" href="../html/sanpham1.html">SẢN PHẨM</a></li>
+                    <li class="nav-item m-1" onmouseover="add_li_hover(this)" onmouseout="remove_li_hover(this)"><a class="nav-link text-light" href="../html/tintuc.html">TIN TỨC</a></li>
+                    <li class="nav-item m-1" onmouseover="add_li_hover(this)" onmouseout="remove_li_hover(this)"><a class="nav-link text-light" href="../html/lienhe1.html">LIÊN HỆ</a></li>
+                    <li class="nav-item m-1" onmouseover="add_li_hover(this)" onmouseout="remove_li_hover(this)"><a class="nav-link text-light" href="../html/sitemap.html">SITEMAP</a></li>
+                </ul>
+            </nav>
+            <div class="row row-header head-div">
+                <div class="search p-3 col-md-4 position-relative div-tab">
+                    <img class="icon-search header-icon" src="../images/search-icon.png">
+                    <div class="position-absolute input-search">
+                        <form action="">
+                            <input class="form-control" type="text" placeholder="Nhập từ khóa tìm kiếm">
+                        </form>
+                    </div>
+                </div>
+                <div class="user p-3 col-md-4 position-relative div-tab">
+                  <img class="icon-user header-icon" src="../images/user-icon.png">
+                    <div class="auth-form nav position-absolute">
+                        <ul class="navbar-nav m-auto w-100">
+                            <li class="nav-item"><a class="nav-link text-dark pl-1" href="../html/dangky.html">Đăng ký</a></li>
+                            <li class="nav-item"><a class="nav-link text-dark pl-1" href="../html/dangnhap.html">Đăng nhập</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bag p-3 col-md-4 position-relative div-tab">
+                  <a href="../html/giohang.html"><img class="icon-user header-icon" src="../images/cart.png"></a>
+                    <div class="no_card position-absolute">
+                        <figure class="border border">
+                            <img src="../images/no-cart.png" alt="">
+                            <figcaption class="text-center bg-white p-2">Chưa có sản phẩm</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </header>
+
+  <div class="container-fluid p-3" style="margin-top: 102px;">
+    <div class="container">
+    </div>
+  </div>
+</head>
+
+    <!-- end header -->
+
+    <main role="main">
+    <div class="container mt-4">
+        <div id="thongbao" class="alert alert-danger d-none face" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button>
+        </div>
+
+        <h1 class="text-center">Giỏ hàng</h1>
+        <div class="row">
+            <div class="col col-md-12">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>Ảnh sản phẩm</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Số lượng</th>
+                            <th>Đơn giá</th>
+                            <th>Thành tiền</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody id="datarow">
+                        <tr>
+                            <td class="stt">1</td>
+                            <td>
+                                <img src="../images/gh1nho.jpg" class="hinhdaidien">
+                            </td>
+                            <td>BST Nến Thơm Cao Cấp Lời Thì Thầm Của Gió</td>
+                            <td class="text-right">2</td>
+                            <td class="text-right">185,000 vnđ</td>
+                            <td class="text-right">370,000 vnđ</td>
+                            <td>
+                                <a data-sp-ma="2" class="btn btn-danger btn-delete-sanpham">Xóa                             
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="stt">2</td>
+                            <td>
+                                <img src="../images/gh2.jpg" class="hinhdaidien">
+                            </td>
+                            <td>BST nến thơm cao cấp hương vị tình yêu</td>
+                            <td class="text-right">4</td>
+                            <td class="text-right">170,000 vnđ</td>
+                            <td class="text-right">680,000 vnđ</td>
+                            <td>
+                                <a data-sp-ma="6" class="btn btn-danger btn-delete-sanpham">
+                                     Xóa
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="stt">3</td>
+                            <td>
+                                <img src="../images/gh3.jpg" class="hinhdaidien">
+                            </td>
+                            <td>Thác Nước Phong Thủy Vĩnh Kết Đồng Tâm</td>
+                            <td class="text-right">1</td>
+                            <td class="text-right">2,750,000 vnđ</td>
+                            <td class="text-right">2,750,000 vnđ</td>
+                            <td>
+                                <a data-sp-ma="4" class="btn btn-danger btn-delete-sanpham">
+                                     Xóa
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <a href="../html/sanpham1.html" class="btn btn-warning btn-md">
+                    Tiếp tục xem sản phẩm
+                </a>
+                <a href="../html/thanhtoan.html" class="btn btn-primary btn-md">
+                    Thanh toán
+                </a>
+                <br><br>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function xoaHang(event) {
+            var btnXoa = event.target;
+            var hang = btnXoa.parentNode.parentNode;
+            var tbody = hang.parentNode;
+            
+            hang.parentNode.removeChild(hang);
+
+            var sttElements = tbody.getElementsByClassName("stt");
+            for (var i = 0; i < sttElements.length; i++) {
+                sttElements[i].textContent = i + 1;
+            }
+        }
+
+        var btnDeleteSanPhamList = document.getElementsByClassName("btn-delete-sanpham");
+        for (var i = 0; i < btnDeleteSanPhamList.length; i++) {
+            btnDeleteSanPhamList[i].addEventListener("click", xoaHang);
+        }
+    </script>
+</main>
+	<div class="hotline">
+  <a href="tel:0976982870"><span class="hotline-text">Hotline:</span> 0976982870</a>
+</div>
+
+    <!-- footer -->
+  <footer class="bg-dark py-4">
+    <div class="container">
+        <div class="row pt-3">
+            <div class="col-md-5">
+                <h4 class="text-white">Fanpage</h4>                           
+                  <a href=""><img class="icon-user footer-icon" src="../images/facebook-icon.png"></a>
+                  <a href=""><img class="icon-user footer-icon" src="../images/twitter-icon.png"></a>
+                  <a href=""><img class="icon-user footer-icon" src="../images/insta-icon.png"></i></a>
+                  <a href=""><img class="icon-user footer-icon" src="../images/youtube-icon.png"></i></a>
+            </div>
+            <div class="col-md-7 rounded">
+                <h4 class="text-white">Đăng ký nhận thông tin</h4>
+                <p class="text-white">Hãy cho chúng tôi email của bạn và bạn sẽ được cập nhật hàng ngày với các sự kiện mới nhất, chi tiết!</p>
+                <div class="bg-white d-flex">
+                    <input id="email_footer" class="w-100 border-0 pl-3" type="text" placeholder="Nhập email để đăng ký">
+                    <button id="btn_footer" class="btn col-md-2" style="background-color: turquoise;">Đăng ký</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-4">
+        <div class="row pt-3">
+            <div class="col-md-3">
+                <h4 class="text-white">Về chúng tôi</h4>
+                <ul class="navbar-nav footer__menu">
+                    <li class="nav-item"><a class="nav-link text-secondary" href="#"><img class="footer2-icon" src="../images/location-icon.png"> 12 Nguyễn Văn Bảo, Phương 4, Q.Gò Vấp, Tp. Hồ Chí Minh</a></li>
+                    <li class="nav-item"><a class="nav-link text-secondary" href="#"><img class="footer2-icon" src="../images/phone-icon.png"> 9999999999</a></li>
+                    <li class="nav-item"><a class="nav-link text-secondary" href="#"><img class="footer2-icon" src="../images/mail-icon.png"> dhcn@iuh.edu.vn</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-3">
+                <h4 class="text-white">Tin tức</h4>
+                <ul class="navbar-nav footer__menu">
+                    <li class="nav-item"><a class="nav-link text-secondary" href="">Về chúng tôi</a></li>
+                    <li class="nav-item"><a class="nav-link text-secondary" href="">Giới thiệu chung</a></li>
+                    <li class="nav-item"><a class="nav-link text-secondary" href="">Giới thiệu cửa hàng</a></li>
+                    <li class="nav-item"><a class="nav-link text-secondary" href="">Thời gian làm việc</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-3">
+                <h4 class="text-white">Câu hỏi thường gặp</h4>
+                <ul class="navbar-nav footer__menu">
+                    <li class="nav-item"><a class="nav-link text-secondary" href="">Hỏi đáp</a></li>
+                    <li class="nav-item"><a class="nav-link text-secondary" href="">Liên hệ</a></li>
+                    <li class="nav-item"><a class="nav-link text-secondary" href="">Khuyến mãi</a></li>
+                    <li class="nav-item"><a class="nav-link text-secondary" href="">Sản phẩm hot</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-3">
+                <h4 class="text-white">Chính sách</h4>
+                <ul class="navbar-nav footer__menu">
+                    <li class="nav-item"><a class="nav-link text-secondary" href="">Chính sách bảo hành</a></li>
+                    <li class="nav-item"><a class="nav-link text-secondary" href="">Chính sách vận chuyển</a></li>
+                    <li class="nav-item"><a class="nav-link text-secondary" href="">Chính sách đổi hàng</a></li>
+                    <li class="nav-item"><a class="nav-link text-secondary" href="">Quy định thanh toán</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+  </footer>
+
+<script>// Hàm xóa hàng dựa vào khóa chính `sp_ma`
+function xoaHang(event) {
+  var btnXoa = event.target; // Nút xóa được nhấn
+  var hang = btnXoa.parentNode.parentNode; // Đến hàng chứa nút xóa
+  hang.parentNode.removeChild(hang); // Xóa hàng khỏi bảng
+}
+
+// Lắng nghe sự kiện click của các nút xóa
+var btnDeleteSanPhamList = document.getElementsByClassName("btn-delete-sanpham");
+for (var i = 0; i < btnDeleteSanPhamList.length; i++) {
+  btnDeleteSanPhamList[i].addEventListener("click", xoaHang);
+}
+
+</script>
+  <script>
+    function add_li_hover(x){
+      $(x).addClass("nav-item__after");
+    }
+
+    function remove_li_hover(x){
+        $(x).removeClass("nav-item__after");
+    }
+
+    function hide(){
+      $(".mega-content").addClass("d-none");
+    }
+
+    function show(){
+        $(".mega-content").removeClass("d-none");
+    }
+
+    $(document).ready(function( $ ) {
+        $('.counter-value').counterUp({
+            delay: 10,
+            time: 1000
+        });
+    });
+	$(document).ready(function(){
+            $('#btn_footer').click(function(){
+                var email =  $('#email_footer').val();
+                var email_regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (email.length == 0 || !email_regex.test(email)){
+                        alert('Email không được trống và phải đúng định dạng');
+                        return false;
+                    }        
+                    else       
+                        {alert('Cảm ơn bạn đã đăng ký nhận thông tin từ shop!')
+                        $('#email_footer').val('')}
+
+            })
+        })
+  </script>
+</body>
+</html>
